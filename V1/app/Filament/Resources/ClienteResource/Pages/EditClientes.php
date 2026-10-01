@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Filament\Resources\ClienteResource\Pages;
+
+use App\Filament\Resources\ClienteResource;
+use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\EditRecord;
+
+/**
+ * Edición de clientes.
+ */
+class EditClientes extends EditRecord
+{
+    protected static string $resource = ClienteResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [DeleteAction::make()];
+    }
+}

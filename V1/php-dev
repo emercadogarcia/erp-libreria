@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Wrapper de desarrollo: PHP con el driver pdo_sqlite local (el entorno no lo trae).
+# Uso: ./php-dev artisan serve | ./php-dev artisan test | ./php-dev artisan migrate ...
+# En producción (PostgreSQL) usa el binario `php` normal; este wrapper es solo para la demo local.
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# El primer elemento vacío conserva el directorio conf.d por defecto de PHP.
+export PHP_INI_SCAN_DIR=":$DIR/storage/php-extensions/php-ini"
+exec php "$@"

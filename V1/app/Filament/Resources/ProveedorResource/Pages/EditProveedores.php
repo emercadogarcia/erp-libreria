@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Filament\Resources\ProveedorResource\Pages;
+
+use App\Filament\Resources\ProveedorResource;
+use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\EditRecord;
+
+/**
+ * Edición de proveedores.
+ */
+class EditProveedores extends EditRecord
+{
+    protected static string $resource = ProveedorResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [DeleteAction::make()];
+    }
+}
